@@ -1,0 +1,67 @@
+// Подключение шрифтов
+// @font-face {
+// 	font-family: Roboto;
+// 	font-weight: 400;
+// 	font-display: swap;
+// 	src: local("Roboto"), url(../fonts/roboto-v29-latin_cyrillic-regular.woff2) format("woff2"),
+// 		url(../fonts/roboto-v29-latin_cyrillic-regular.woff) format("woff");
+// }
+
+// @font-face {
+// 	font-family: Roboto;
+// 	font-weight: 500;
+// 	font-display: swap;
+// 	src: local("Roboto"), url(../fonts/roboto-v29-latin_cyrillic-500.woff2) format("woff2"),
+// 		url(../fonts/roboto-v29-latin_cyrillic-500.woff) format("woff");
+// }
+
+// Файл обнуляющих стилей
+@import "_nullstyle";
+
+body {
+	height: 100%; //! 100vh
+	min-width: 320px; //! дописали на интенсиве
+	line-height: 1;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: Roboto, sans-serif;
+
+	color: #ffffff;
+	background-color: #000000;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	// &._lock {
+	// 	overflow: hidden; //! добавляем класс "_lock" в JS для запрета прокрутки при активном меню-бургере
+	// }
+}
+
+img {
+	//! дописали на интенсиве: чтобы не ломались картинки
+	max-width: 100%;
+	// height: auto;
+}
+
+//================================================================================================
+
+// Подключение header
+@import "_header";
+
+//================================================================================================
+
+// ОСНОВНОЙ БЛОК: CONTENT
+
+//================================================================================================
+
+//========  ===============================================================================
+
+//========  =============================================================================
+
+//========  ================================================================================
+
+//================================================================================================
+
+// Подключение footer
+@import "_footer";
