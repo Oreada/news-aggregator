@@ -1,0 +1,65 @@
+.header {
+}
+
+.header__container {
+}
+
+.header__row {
+	min-height: 85px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px; //! secure
+}
+
+.header__logo {
+}
+
+.header__form {
+}
+
+.search {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px; //! secure
+
+	width: 100%;
+	max-width: 850px;
+}
+
+.search__label {
+	position: relative;
+
+	width: 100%;
+	max-width: 500px;
+	height: 44px;
+}
+
+.search__input {
+	//! чтобы инпут взял размеры родителя: 500х44
+	width: 100%;
+	height: 100%;
+
+	border: 1px solid #e6e6e6;
+	border-radius: 22px;
+
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
+.search__submit-loupe {
+	position: absolute;
+	right: 11px;
+	top: 50%; //! опустили верхнюю линию изображения на 50% ВЫСОТЫ РОДИТЕЛЯ (нашли центр по оси У)
+	transform: translateY(-50%); //! подняли верхнюю линию изображения на 50% ВЫСОТЫ САМОГО ИЗОБРАЖЕНИЯ
+	//! теперь центр изображения совпадает с центром родителя по оси У
+
+	width: 22px;
+	height: 22px;
+	background: transparent;
+}
+
+.search__js-choice {
+}
