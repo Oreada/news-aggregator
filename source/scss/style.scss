@@ -1,37 +1,46 @@
 // Подключение шрифтов
-// @font-face {
-// 	font-family: Roboto;
-// 	font-weight: 400;
-// 	font-display: swap;
-// 	src: local("Roboto"), url(../fonts/roboto-v29-latin_cyrillic-regular.woff2) format("woff2"),
-// 		url(../fonts/roboto-v29-latin_cyrillic-regular.woff) format("woff");
-// }
-
-// @font-face {
-// 	font-family: Roboto;
-// 	font-weight: 500;
-// 	font-display: swap;
-// 	src: local("Roboto"), url(../fonts/roboto-v29-latin_cyrillic-500.woff2) format("woff2"),
-// 		url(../fonts/roboto-v29-latin_cyrillic-500.woff) format("woff");
-// }
+/* roboto-300 - latin_cyrillic */
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	src: local("Roboto"), url("../fonts/roboto-v29-latin_cyrillic-300.woff2") format("woff2"),
+		url("../fonts/roboto-v29-latin_cyrillic-300.woff") format("woff");
+}
+/* roboto-regular - latin_cyrillic */
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Roboto"), url("../fonts/roboto-v29-latin_cyrillic-regular.woff2") format("woff2"),
+		url("../fonts/roboto-v29-latin_cyrillic-regular.woff") format("woff");
+}
+/* roboto-700 - latin_cyrillic */
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	src: local("Roboto"), url("../fonts/roboto-v29-latin_cyrillic-700.woff2") format("woff2"),
+		url("../fonts/roboto-v29-latin_cyrillic-700.woff") format("woff");
+}
 
 // Файл обнуляющих стилей
 @import "_nullstyle";
 
 body {
-	height: 100%; //! 100vh
+	min-height: 100vh;
 	min-width: 320px; //! дописали на интенсиве
-	line-height: 1;
-	font-size: 14px;
-	font-weight: 400;
+	line-height: 1.3; //! 130% в макете, но в body так писать нельзя
+	font-size: 16px;
+	font-weight: 300;
 	font-family: Roboto, sans-serif;
 
-	color: #ffffff;
-	background-color: #000000;
+	color: #212121;
+	background-color: #ffffff;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: space-between;
 
 	// &._lock {
 	// 	overflow: hidden; //! добавляем класс "_lock" в JS для запрета прокрутки при активном меню-бургере
@@ -41,8 +50,35 @@ body {
 img {
 	//! дописали на интенсиве: чтобы не ломались картинки
 	max-width: 100%;
-	// height: auto;
+	height: auto;
 }
+
+.visually-hidden {
+	//! скрытые заголовки, которые не видны человеку, но считываются роботом
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+._container {
+	max-width: 1140px;
+	padding: 0px 15px; //! это отступы безопасности
+	margin: 0px auto; //! позволяет контейнеру выстроиться посередине
+	box-sizing: content-box;
+	//! Переключили контейнер с border-box на content-box после добавления паддинга, чтобы паддинг не считался частью max-width
+}
+
+// ._ibg {
+// 	position: relative;
+
+// 	img {
+// 		position: absolute;
+// 		width: 100%;
+// 		height: 100%;
+// 		top: 0;
+// 		left: 0;
+// 		object-fit: cover;
+// 	}
+// }
 
 //================================================================================================
 
