@@ -1,0 +1,53 @@
+.footer {
+}
+
+.footer__container {
+}
+
+.footer__row {
+	min-height: 93px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px; //! secure
+
+	border-top: 1px solid #e6e6e6;
+}
+
+.footer__logo {
+}
+
+.footer__copyright {
+	font-weight: 300;
+	font-size: 12px;
+
+	transform: translateY(16px);
+}
+
+.footer__social {
+}
+
+.social {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.social__item {
+	color: #09e079;
+}
+
+.social__link {
+	//! нужно прописать ссылке, а то она "выпала" вниз и не соответствует размерам иконки
+	display: block;
+	width: 30px;
+	height: 30px;
+
+	color: #09e079;
+	transition: color 0.3s ease 0s;
+
+	&:hover {
+		color: darken(#09e079, 15%);
+	}
+}
