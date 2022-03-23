@@ -67,6 +67,11 @@ img {
 	//! Переключили контейнер с border-box на content-box после добавления паддинга, чтобы паддинг не считался частью max-width
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+	display: none;
+	//! убрали в поисковом инпуте крестик, который появляется справа, когда что-то печатаешь в этот инпут
+}
+
 // ._ibg {
 // 	position: relative;
 

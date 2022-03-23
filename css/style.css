@@ -141,3 +141,7 @@ img {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
