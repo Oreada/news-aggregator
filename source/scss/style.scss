@@ -38,8 +38,8 @@ body {
 	color: #212121;
 	background-color: #ffffff;
 
-	// display: flex;
-	// flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	// justify-content: space-between;
 
 	// &._lock {
@@ -96,7 +96,130 @@ input[type="search"]::-webkit-search-cancel-button {
 
 //================================================================================================
 
-//========  ===============================================================================
+//======== main ===============================================================================
+
+.main {
+	flex: 1 1 auto;
+}
+
+.main__title {
+	margin-bottom: 40px;
+}
+
+.title {
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.title__container {
+}
+
+.title__hidden-title {
+}
+
+.title__found-title {
+	font-weight: 700;
+	font-size: 26px;
+}
+
+.main__news {
+	margin-bottom: 50px;
+}
+
+.news {
+}
+
+.news__container {
+}
+
+.news__hidden-title {
+}
+
+.news__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 270px); //! auto-fit - для адаптива
+	justify-content: space-evenly;
+	gap: 40px 20px;
+}
+
+.news__item {
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.card__image {
+	width: 100%;
+	height: 200px;
+	// object-fit: cover;
+
+	margin-bottom: 10px;
+}
+
+.card__text {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+
+	& > *:not(:last-child) {
+		margin: 0px 0px 10px 0px;
+	}
+}
+
+.card__title {
+}
+
+.card__link {
+	display: block;
+	font-weight: 700;
+	font-size: 16px;
+
+	background-image: url(../img/arrow-up-right.svg);
+	background-repeat: no-repeat;
+	background-position: top right;
+
+	padding-right: 30px;
+	transition: color 0.3s ease 0s;
+
+	&:hover {
+		color: #09e079;
+	}
+}
+
+.card__description {
+	flex: 1 1 auto;
+
+	font-weight: 300;
+	font-size: 12px;
+}
+
+.card__footer {
+}
+
+.footer-card {
+	display: flex;
+	justify-content: space-between;
+
+	font-weight: 300;
+	font-size: 10px;
+
+	color: #8e8e8e;
+}
+
+.footer-card__datetime {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.footer-card__author {
+}
 
 //========  =============================================================================
 
