@@ -61,5 +61,23 @@
 	background: transparent;
 }
 
-.search__js-choice {
+//! классы, которые появились благодаря плагину для выпадающего списка
+.choices {
+	width: 320px;
+	height: 44px;
+}
+
+.choices__inner {
+	background-color: #ffffff;
+	border: 1px solid #e6e6e6;
+	border-radius: 22px;
+}
+
+.choices__placeholder {
+	color: #212121;
+	opacity: 1;
+}
+
+.choices[data-type*="select-one"]:after {
+	right: 20px;
 }
