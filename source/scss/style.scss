@@ -73,7 +73,7 @@ img {
 
 input[type="search"]::-webkit-search-cancel-button {
 	display: none;
-	//! убрали в поисковом инпуте крестик, который появляется справа, когда что-то печатаешь в этот инпут
+	//! убрали в поисковом инпуте крестик, который появляется справа, когда что-то печатаешь в этом инпуте
 }
 
 // ._ibg {
@@ -165,7 +165,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .card__image {
 	width: 100%;
 	height: 200px;
-	// object-fit: cover;
+	object-fit: cover;
 
 	margin-bottom: 10px;
 }
