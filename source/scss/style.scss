@@ -61,10 +61,14 @@ img {
 
 ._container {
 	max-width: 1140px;
-	padding: 0px 15px; //! это отступы безопасности
+	padding: 0px 30px;
 	margin: 0px auto; //! позволяет контейнеру выстроиться посередине
 	box-sizing: content-box;
 	//! Переключили контейнер с border-box на content-box после добавления паддинга, чтобы паддинг не считался частью max-width
+
+	@media (max-width: 560px) {
+		padding: 0px 15px;
+	}
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -123,6 +127,10 @@ input[type="search"]::-webkit-search-cancel-button {
 .title__found-title {
 	font-weight: 700;
 	font-size: 26px;
+
+	@media (max-width: 768px) {
+		font-size: 20px;
+	}
 }
 
 .main__news {
