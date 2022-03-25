@@ -85,7 +85,7 @@ const renderCard = (data) => {
 
 const loadNews = async () => {
 
-	newsList.innerHTML = '<li class="preload"></li>';  //! будет показываться этот элемент, пока не загрузятся новости
+	newsList.innerHTML = '<li class="preload"><p class="preload__bg"></p></li>';  //! будет показываться этот элемент, пока не загрузятся новости
 
 	const country = localStorage.getItem('country') || 'us';  //! если уже есть значение страны в localStorage, то берём его, иначе - по умолчанию "us"
 	choices.setChoiceByValue(country);

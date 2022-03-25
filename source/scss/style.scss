@@ -229,6 +229,29 @@ input[type="search"]::-webkit-search-cancel-button {
 .footer-card__author {
 }
 
+//======== preload with animation =============================================================================
+
+.preload {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.preload__bg {
+	background-image: url(../img/preload.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 185px;
+	height: 185px;
+	animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+	to {
+		transform: rotate(-360deg);
+	}
+}
+
 //========  =============================================================================
 
 //========  ================================================================================
