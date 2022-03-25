@@ -74,7 +74,7 @@ const renderCard = (data) => {
 								<time class="footer-card__datetime" datetime="${news.publishedAt}">
 									<span>${news.publishedAt}</span><span> 11:06</span>
 								</time>
-								<div class="footer-card__author">${news.author}</div>
+								<div class="footer-card__author">${news.author || news.source.name}</div>
 							</div>
 						</div>
 		`;
@@ -84,9 +84,27 @@ const renderCard = (data) => {
 };
 
 const loadNews = async () => {
-	const data = await getData('https://newsapi.org/v2/top-headlines?country=ua');
+
+	newsList.innerHTML = '<li class="preload"></li>';  //! будет показываться этот элемент, пока не загрузятся новости
+
+	const country = localStorage.getItem('country') || 'us';  //! если уже есть значение страны в localStorage, то берём его, иначе - по умолчанию "us"
+	choices.setChoiceByValue(country);
+
+	const data = await getData(`https://newsapi.org/v2/top-headlines?country=${country}&pageSize=50`);
 	renderCard(data.articles);
 };
+
+//! ======= Choice the country by <select> ===================================================================
+
+elementSelect.addEventListener('change', (event) => {
+	const value = event.detail.value;
+	// console.log(value);
+	localStorage.setItem('country', value);  //! сохраняем выбранную страну в localStorage
+	loadNews();
+});
+
+
+//! ======= Work with api ===================================================================
 
 loadNews();
 
