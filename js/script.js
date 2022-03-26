@@ -72,21 +72,37 @@ const getDateCorrectFormat = (isoDate) => {
 	return `<span>${formatDate}</span><span> ${formatTime}</span>`;
 };
 
-const getImage = (url) => {
-	const image = document.createElement('img');
-	image.src = 'img/no_photo.jpg';
+const getImage = (url) => new Promise((resolve, reject) => {
+	const image = new Image(270, 200);
+	// const image = document.createElement('img');
 
+	image.addEventListener('load', (event) => {
+		resolve(image);
+	});
+
+	image.addEventListener('error', (event) => {
+		// reject();  //! у нас вместо реджекта подстановка "no_photo" и опять резолв
+
+		image.src = 'img/no_photo.jpg';
+		resolve(image);
+	});
+
+	image.src = url || 'img/no_photo.jpg';
+	image.className = 'card__image';
 	return image;
-}
+});
 
 const renderCard = (data) => {
 	newsList.textContent = '';
-	data.forEach((news) => {
+
+	//! сюда добавили async/await, т.к. без них "const image = getImage(news.urlToImage);" вернёт сам промис - Promise {<pending>}
+	data.forEach(async (news) => {
 		const card = document.createElement('li');
 		card.classList.add('news__item', 'card');
 
 		//! добавляем картинку отдельно и через функцию getImage для проверки наличия изображения и принятия соотв.мер, если его нет:
-		const image = getImage(news.urlToImage);
+		const image = await getImage(news.urlToImage);
+		image.alt = news.title;
 		card.append(image);
 		// <img class="card__image" src="${news.urlToImage}" alt="${news.title}" width="270" height="200">
 
